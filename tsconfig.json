@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "module": "commonjs",
+    "alwaysStrict": true,
+    "sourceMap": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": false,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "experimentalDecorators": true,
+    "newLine": "LF",
+    "strict": true,
+    "outDir": "./lib",
+    "preserveConstEnums": true,
+    "typeRoots": [
+      "./node_modules/@types"
+    ]
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

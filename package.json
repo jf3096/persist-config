@@ -1,0 +1,51 @@
+{
+  "name": "persist-config",
+  "version": "0.0.1",
+  "description": "全局配置文件读写",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "devDependencies": {
+    "@types/chai": "^4.0.2",
+    "@types/commander": "2.9.2",
+    "@types/deasync": "0.1.0",
+    "@types/is-promise": "2.1.0",
+    "@types/mocha": "^2.2.41",
+    "@types/node": "^8.0.22",
+    "@types/os-homedir": "1.0.0",
+    "@types/update-notifier": "1.0.2",
+    "chai": "^4.1.1",
+    "mocha": "^3.5.0",
+    "mochawesome": "2.3.0",
+    "node-echo": "0.1.1",
+    "nyc": "11.1.0",
+    "rimraf": "2.6.1",
+    "ts-node": "^3.3.0",
+    "tslint": "^5.6.0",
+    "typescript": "^2.4.2"
+  },
+  "files": [
+    "libs"
+  ],
+  "keywords": [
+    "global-config"
+  ],
+  "scripts": {
+    "test": "mocha src/**/*.spec.ts --watch-extensions ts --require ts-node/register -t 2000",
+    "test:coverage": "nyc --reporter=text npm run test",
+    "test:watch": "npm test -- --watch",
+    "test:report": "npm test -- --reporter mochawesome",
+    "clean": "rimraf lib && rimraf mochawesome",
+    "link": "npm link",
+    "prebuild": "npm run clean && npm run lint && tsc --version",
+    "build": "tsc --pretty",
+    "lint": "tslint --force \"src/**/*.ts\"",
+    "prepublishOnly": "npm run build",
+    "start": "ts-node src/index.ts"
+  },
+  "author": "Ailun She",
+  "license": "MIT",
+  "dependencies": {
+    "deasync-promise": "1.0.1",
+    "os-homedir": "1.0.2"
+  }
+}
